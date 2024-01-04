@@ -1,6 +1,8 @@
 import { memo, useEffect, useRef } from 'react'
 import * as THREE from 'three'
 
+// use ref allows you to have a container so that you can have
+// the same value between renders
 const UseRefMemo = memo(function UseRef() {
     const renderTarget = useRef();
 
@@ -15,6 +17,7 @@ const UseRefMemo = memo(function UseRef() {
     );
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    //ref allows us to hold specific DOM nodes    
     renderTarget.current.appendChild(renderer.domElement)
     const geometry = new THREE.BoxGeometry(1, 1, 1);
     const material = new THREE.MeshLambertMaterial({ color: 0x00ff00 });
@@ -39,6 +42,11 @@ const UseRefMemo = memo(function UseRef() {
     };
     })
     
+// if you have some sort of animation frame that you're keeping 
+// track of orsomething like that where that the particular object 
+// that you're referring tohas to be the same one, this is what refs are for.
+// Very niche use case.
+
     return (
         <div className='use-ref page'>
             <div ref={renderTarget} className='scene'></div>
@@ -47,3 +55,10 @@ const UseRefMemo = memo(function UseRef() {
 })
 
 export default UseRefMemo
+
+// wrapping your code in useMemo will cause everything to 
+// not want to rerender
+// if it rerenders, i destroy the scene and rerender it
+// by using memo up in line 6(ish) we can guarantee that, 
+// as long as the props are being passed into the useRef, memo 
+// components don't change it doesn't rerender
