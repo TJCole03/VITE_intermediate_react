@@ -62,3 +62,5 @@ export default UseRefMemo
 // by using memo up in line 6(ish) we can guarantee that, 
 // as long as the props are being passed into the useRef, memo 
 // components don't change it doesn't rerender
+// props give you no help memoizing anything
+// 
