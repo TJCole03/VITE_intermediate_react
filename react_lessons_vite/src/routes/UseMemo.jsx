@@ -4,6 +4,8 @@ import expensiveMathOperation from './expensiveMathOperation'
 export default function Home() {
     const [count, setCount] = useState(35);
     const [left, setLeft] = useState(0);
+    //this line below is necessary becasue it separates (memoizes) the two components so they can both 
+    //perform optimally
     const value = useMemo(() => expensiveMathOperation(count), [count]);
 
     useEffect(() => {
