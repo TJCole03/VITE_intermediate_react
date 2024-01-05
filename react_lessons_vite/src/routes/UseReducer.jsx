@@ -25,7 +25,7 @@ const reducer = (state, action) => {
     }
 }
 
-const UseReducerComponent = () {
+const UseReducerComponent = () => {
     const [{ h, s, l }, dispatch] = useReducer(reducer, { h: 50, s: 50, l: 50 })
     return (
         <div className='page use-reducer'>
