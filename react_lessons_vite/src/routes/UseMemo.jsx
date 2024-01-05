@@ -16,6 +16,7 @@ export default function Home() {
     return (
         <div>
             <div style={{
+                //how the ball moves back and forth
                 left: `${Math.sin(left * 0.05) * 100 + 100}px`
             }}
                 className='ball'
