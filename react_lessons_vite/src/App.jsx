@@ -1,5 +1,6 @@
 // import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
+// import Home from './routes/Home'
 import UseMemo from './routes/UseMemo'
 import UseReducer from './routes/UseReducer'
 import UseRef from './routes/UseRef'
@@ -12,9 +13,10 @@ function App() {
   return (
     <div className='App'>
       <Routes>
-        <Route element={<UseMemo />} />  
-        <Route element={<UseReducer />} />
-        <Route element={<UseRef />} />
+        {/* <Route path='/' element={<Home />} /> */}
+        <Route path='./useMemo' element={<UseMemo />} />  
+        <Route path='./useReducer' element={<UseReducer />} />
+        <Route path='./useRef' element={<UseRef />} />
       </Routes>
     </div>
 
