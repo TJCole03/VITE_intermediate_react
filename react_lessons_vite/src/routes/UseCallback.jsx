@@ -17,6 +17,9 @@ export default function Home() {
 const aUsefulCallback = () => { }
 const memoizedCallBack = useCallback(aUsefulCallback, [])
 
+//useCallback memoizes any callback so that we're being given the 
+//exact same function in every rendering
+    
 return (
     <div>
         <div
