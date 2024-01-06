@@ -23,6 +23,6 @@ return (
             style={{ left: `${Math.sin(left * 0.05) * 100 + 100}px` }}
             className='ball'
         ></div>
-        <UseRefComponent cb={memoizedCallback} />
+        <UseRefComponent cb={memoizedCallBack} />
     </div>
 )}
