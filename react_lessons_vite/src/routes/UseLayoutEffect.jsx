@@ -12,8 +12,8 @@ const LayoutEffectComponent = () => {
 
     return (
     <>
-        <h2>text area width: {width}</h2>
-        <h2>text area height: {height}</h2>
+        <h2>textarea width: {width}</h2>
+        <h2>textarea height: {height}</h2>
             <textarea 
                 onClick={() => {
                     setWidth(0)
