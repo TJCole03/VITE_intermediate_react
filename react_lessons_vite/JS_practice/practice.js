@@ -109,3 +109,46 @@ function remove_character(str, char_pos) {
   // Return the concatenation of part1 and part2, effectively removing the character at char_pos
   return (part1 + part2);
 }
+
+function charRemoval(str, index) {
+  newStr1 = str.substring(0, index);
+  newStr2 = str.substring(index + 1, str.length)
+
+return newStr1 + newStr2
+}
+
+console.log(charRemoval('HolyShitBallsBatman!', 3))
+console.log(charRemoval('FootyFooty', 8))
+
+// Write a JavaScript program to create another string from a given string with the first character of the given string added to the front and back.  
+
+/*
+1. get originalString
+2. create variable for newString
+3. create function to get first character in originalString by itself (originalString.split(''))
+4. make newString into array of separate characters (call it bibimbapArray)
+5. use array method to add first character (in this case 'b') to index 0 and last index of bibimbapArray
+5. make bibimbapArray into a second new string and return that new new String. (call it finalString)
+*/
+
+// let originalString = 'Bobby'
+// let newString = 'bibimbap'
+
+function bonkers(origStr, newStr) {
+ let bobbyArray = origStr.split('')
+ // let oneLetter = JSON.stringify(bobbyArray.splice(0,1).join())
+  //what if we didn't stringify??
+ let oneLetter = bobbyArray.splice(0,1).join()
+  // return oneLetter
+  // const addLetter = (oneLetter) => {}
+    let poo = newStr.split('')
+    poo.unshift(oneLetter)
+    poo.push(oneLetter)
+    console.log(poo,'poo')
+    let finalString = poo.join('')
+    console.log(finalString)
+  
+}
+
+
+console.log(bonkers('bobby', 'bibimbap'))
