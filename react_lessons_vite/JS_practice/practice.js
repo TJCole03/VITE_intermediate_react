@@ -152,3 +152,65 @@ function bonkers(origStr, newStr) {
 
 
 console.log(bonkers('bobby', 'bibimbap'))
+
+
+
+class Person {
+  constructor(name, age, country) {
+    this.name = name 
+    this.age = age
+    this.country = country
+    
+  }
+
+  sayHi(){
+    console.log(`Hi! I am ${this.name}. I am ${this.age} years old and hail from ${this.country}`)
+  }
+  
+}
+
+const Garth = new Person("Garth", 800, 'Antarctica')
+
+console.log(Garth)
+console.log(Garth.sayHi())
+
+
+class Redneck{
+  constructor(firstName, favBand, favBeer, arrestCount){
+    this.firstName = firstName,
+    this.favBand = favBand,
+    this.favBeer = favBeer,
+    this.arrestCount = arrestCount
+  }
+
+  runFromPolice(){
+    return `${this.firstName}!! Turn off the ${this.favBand} n' bring the ${this.favBeer}!! We gotta git goin' if we don't wanna have ${this.arrestCount} arrests!!`
+  }
+}
+
+const Redneck1 = new Redneck('Dale', 'Skynrd', 'Busch Light', '12')
+
+console.log(Redneck1.runFromPolice())
+
+class Rectangle{
+  constructor(width, height){
+    this.width = width, 
+    this.height = height
+  }
+
+  area(){
+    return this.width * this.height
+  }
+
+  perim(){
+    return (2 * (this.height + this.width))
+  }
+}
+
+const rec =  new Rectangle(4, 3)
+console.log(rec.area(), rec.perim())
+
+
+
+// A=wl area
+// P=2(l+w) perim
