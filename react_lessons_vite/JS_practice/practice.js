@@ -385,3 +385,52 @@ const Wally = new Dawg('Walrus', 'guuuuuurrrr', 22, 'brownish', 'clams')
 
 console.log(Simba.makeSomeNoooise())
 console.log(Wally.makeSomeNoooise())
+
+/*
+
+9. Write a JavaScript program that creates a class called Bank with properties for bank names and branches. Include methods to add a branch, remove a branch, and display all branches. Create an instance of the Bank class and perform operations to add and remove branches.
+
+*/
+
+class Bank {
+  constructor(name, branch){
+    this.name = ''; 
+    this.branches = [];
+  }
+
+  displayDetails(){
+    return ` ${this.name}, ${this.branches} `
+  }
+  
+  addBranch(branches){
+    return this.branches.push(branches)
+  }
+
+  removeBranch(branches){
+    const index = this.branches.indexOf(branches)
+    if (index !== -1){
+      this.branches.splice(index, 1)
+      console.log(`Branch ${branches} removed successfully`)
+    }
+  }
+
+  displayBranches() {
+    if (this.branches.length === 0) {
+      console.log('No branches available.');
+    } else {
+      console.log('List of Bank Branches:');
+      this.branches.forEach((branch, index) => {
+        console.log(`${index + 1}. ${branch}`);
+      });
+  }
+ }
+}  
+const Fulton = new Bank()
+  
+Fulton.addBranch('palmyra')
+Fulton.addBranch('annville')
+Fulton.addBranch('harrisburg')
+
+Fulton.displayBranches()
+
+Fulton.removeBranch('annville')
