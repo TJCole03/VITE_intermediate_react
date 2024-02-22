@@ -434,3 +434,22 @@ Fulton.addBranch('harrisburg')
 Fulton.displayBranches()
 
 Fulton.removeBranch('annville')
+
+/* Recursive fib sequence */
+function F(n){
+  if (n <= 1) {
+    return 1
+  }
+  return Fn = F(n-1) + F(n-2)
+}
+
+console.log(F(1))
+console.log(F(2))
+console.log(F(3))
+console.log(F(4))
+console.log(F(5))
+console.log(F(6))
+console.log(F(7))
+console.log(F(8))
+console.log(F(9))
+console.log(F(10))
