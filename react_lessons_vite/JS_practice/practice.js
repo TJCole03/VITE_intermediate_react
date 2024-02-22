@@ -214,3 +214,78 @@ console.log(rec.area(), rec.perim())
 
 // A=wl area
 // P=2(l+w) perim
+
+/* OOP Class attempt and right solution */
+// class Vehicle{
+//   constructor(make, model, year){
+//     this.make = make, 
+//     this.model = model, 
+//     this.year = year
+//   }
+
+//   showDetails(){
+//     console.log( `This pristine ${this.make} ${this.model} is a ${this.year} used by a roving gang of teenagers`, 'line 71')
+//   }
+  
+// }
+
+// class Car extends Vehicle{
+//   constructor(make, model, year, doors, color){
+//     super(make, model, year);
+//     this.doors = doors, 
+//     this.color = color
+//   }
+
+//   showDetails(){
+//     super.showDetails()
+//     console.log(`${this.doors},${this.color}`, 'line 85')
+//   }
+// }
+
+// const vehicle = new Vehicle('ford', 'f-150', 2018)
+// const car = new Car('ford', 'f-150', 2018, 4, 'red')
+
+// console.log(vehicle.showDetails())
+// console.log(car.showDetails(), 'lkjhg')
+
+class Vehicle {
+  constructor(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+  }
+
+  displayDetails() {
+    console.log(`Make: ${this.make}`);
+    console.log(`Model: ${this.model}`);
+    console.log(`Year: ${this.year}`);
+  }
+}
+
+class Car extends Vehicle {
+  constructor(make, model, year, doors, color) {
+    super(make, model, year);
+    this.doors = doors;
+    this.color = color;
+  }
+
+  displayDetails() {
+    super.displayDetails();
+    console.log(`Doors: ${this.doors}`);
+    console.log(`Color: ${this.color}`);
+  }
+}
+
+// Create an instance of the Vehicle class
+const vehicle = new Vehicle('Ford', 'F-150', 2020);
+
+// Display vehicle details
+console.log('Vehicle Details:');
+vehicle.displayDetails();
+
+// Create an instance of the Car class
+const car = new Car('Honda', 'Accord', 2023, 4, 'red');
+
+// Display car details
+console.log('\nCar Details:');
+car.displayDetails();
