@@ -289,3 +289,34 @@ const car = new Car('Honda', 'Accord', 2023, 4, 'red');
 // Display car details
 console.log('\nCar Details:');
 car.displayDetails();
+
+class BankAccount{
+  constructor(acctNum, bal){
+    this.acctNum = acctNum;
+    this.bal = bal;
+  }
+
+  withdraw(num){
+    if(this.bal >= num){
+      return this.bal -= num
+    } else {
+      console.log('insufficient funds')
+    }
+  }
+
+  deposit(num){
+    if(this.bal){
+      return this.bal += num
+    }
+  }
+}
+
+const Bob = new BankAccount('42069', 20)
+
+
+console.log(Bob)
+Bob.deposit(40)
+console.log(Bob)
+Bob.withdraw(25)
+console.log(Bob)
+Bob.withdraw(55)
