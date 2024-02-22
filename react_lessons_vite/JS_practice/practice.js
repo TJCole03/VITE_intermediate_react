@@ -320,3 +320,68 @@ console.log(Bob)
 Bob.withdraw(25)
 console.log(Bob)
 Bob.withdraw(55)
+
+class Book{
+  constructor(title, author, pubYr){
+    this.title = title, 
+    this.author = author, 
+    this.pubYr = pubYr
+  }
+
+  displayDetails(){
+    return `Title: ${this.title}
+            Author: ${this.author}
+      Published in: ${this.pubYr} `
+  }
+}  
+class eBook extends Book{
+  constructor(title, author, pubYr, price){
+    super(title, author, pubYr);
+      this.price = price
+    }
+
+  displayDetails(){
+    super.displayDetails()
+    return `Title: ${this.title}
+           Author: ${this.author}
+     Published in: ${this.pubYr} 
+            Price: ${this.price}  `
+  }
+}
+
+const RedFern = new Book('Where the Red Fern Grows', 'Wilson Rawls', '1961')
+const fittyShades = new eBook('Fifty Shades of Grey', 'E.L. James', '2011', '$.01')
+
+
+console.log(RedFern.displayDetails())
+console.log(fittyShades.displayDetails())
+
+class Animal{
+  constructor(species, sound, memberLength){
+    this.species = species;
+    this.sound = sound;
+    this.memberLength = memberLength
+  }
+
+  makeSomeNoooise(n){
+    return `${this.sound}` 
+  } 
+}
+class Dawg extends Animal{
+  constructor(species, sound, memberLength, color, favTreat){
+    super(species, sound, memberLength)
+    this.color = color
+    this.favTreat = favTreat
+  }
+
+  makeSomeNoooise(){
+    return `${this.sound}, ${this.color} `
+
+  } 
+}
+
+const Simba = new Animal('Lion', 'RAWR XD', 4)
+const Wally = new Dawg('Walrus', 'guuuuuurrrr', 22, 'brownish', 'clams')
+
+console.log(Simba.makeSomeNoooise())
+console.log(Wally.makeSomeNoooise())
